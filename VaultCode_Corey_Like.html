@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vault Cracker</title>
+  </head>
+  <body>
+    <script>
+      //Step1:Creating a message from a quote that will be displayed
+      let message =
+        "You have received this message because you have been chosen to open an important vault. Here is the secret combination:";
+
+      //Step 2:These are the numbers for the "safe"
+      let Add = 75 + 5; // This adds
+      let Sub = 32 - 15; // This subtracts
+      let Multi = 10 * 3; // This multiplies
+
+      //Step 3:Adding a let that merges message, and the numbers from the Add,Sub,and multi from above into the empty " ".
+      //I added a "Left","Right" before the numbers just for fun because it's a lock on a vault.
+      // I also added a space on the left side of every "" so it doesn't merge the text "left","right" into the quote.
+      let Combo =
+        message + " Left: " + Add + " Right: " + Sub + " Left: " + Multi;
+
+      //Step 3:Making a function that creates an alert for combo.
+      function ComboAlert() {
+        alert(Combo);
+      }
+
+      //Step 4:Calling the alert that list what's inside Combo
+      ComboAlert();
+    </script>
+  </body>
+</html>
