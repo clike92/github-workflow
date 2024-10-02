@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.PantryItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(231, 232, 181);
+  height: 40px;
+  width: 350px;
+  outline: auto;
+  margin: 10px;
+  position: absolute;
+  left: 290px;
+  top: 81px;
+}
+
+.Corn {
+  display: flex;
+  flex-direction: column;
+  align-items: center left;
+  margin: 10px;
+  position: absolute;
+  left: 705px;
+  top: 146px;
+}
+
+.SnackPic {
+  display: flex;
+  flex-direction: column;
+  align-items: center left;
+  margin: 10px;
+  position: absolute;
+  left: 705px;
+  top: 372px;
+}
+
+.FreezerFoods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(231, 232, 181);
+  height: 40px;
+  width: 350px;
+  margin: 10px;
+  outline: auto;
+  font-weight: bold;
+  position: absolute;
+  left: 290px;
+  top: 305px;
+}
+
+.DryGoods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  background-color: rgb(221, 186, 190);
+  width: 150px;
+  text-align: left;
+  position: absolute;
+  left: 490px;
+  top: 128px;
+  font-weight: bold; /* Adds a dot beside every food */
+}
+
+.Snacks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  background-color: rgb(214, 186, 221);
+  width: 150px;
+  text-align: left;
+  position: absolute;
+  left: 491px;
+  top: 352px;
+  font-weight: bold;
+}
+.Canned {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(159, 198, 172);
+  width: 150px;
+  text-align: left;
+  position: absolute;
+  left: 299px;
+  top: 138px;
+  font-weight: bold; /* Adds a dot beside every food */
+}
+.Veggies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(186, 221, 218);
+  width: 150px;
+  text-align: left;
+  font-weight: bold;
+  position: absolute;
+  left: 299px;
+  top: 363px;
+}
+
+header {
+  color: brown;
+  text-align: center;
+}
+
+h2 {
+  margin: 5px 0;
+}
+
+h3 {
+  margin: 5px 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding: 10;
+}
+
+li {
+  margin: 5px 0;
+}
