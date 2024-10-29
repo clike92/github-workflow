@@ -1,101 +1,75 @@
-// === DO NOT EDIT THIS REGION ===
-// Read the comments to understand how the program is structured.
+const foodsNamesArr = ["Hamburger", "Sushi", "Humus", "Curry"];
 
-// Prompt the user for a list of integers separated by commas.
-const userInputString = prompt(
-  "Please enter some integers separated by commas.",
-  "1,2,3,4,5"
+for (let i = 0; i < foodsNamesArr.length; i++) {
+  console.log(
+    `The name of the food is ${foodsNamesArr[i]} and the index is ${i}`
+  );
+}
+
+foodsNamesArr.forEach((food) => {
+  console.log(food);
+});
+
+foodsNamesArr.forEach((food, index) => {
+  console.log(`The name of the food is ${food} and the index is ${index}`);
+});
+
+// const result = foodsNamesArr.find((element) => element === "Test");
+// console.log(result);
+
+// const result = foodsNamesArr.find((element) => {
+//   return element === "Test";
+// });
+// console.log(result);
+
+// let found = "";
+// for (let i = 0; i < dogsNamesArr.length; i++) {
+// if (dogsNamesArr[i] === "Betty") {
+// found = dogsNamesArr[i];
+// break;
+// }
+// }
+// console.log(found);
+
+// const numArr = [1, 2, 3, 4];
+// const newArr = numArr.map((num) => num + 2);
+// console.log(newArr);
+
+// const newArrForLoop = [];
+// for (let i = 0; i < numArr.length; i++) {
+// newArrForLoop.push(numArr[i] + 2);
+// }
+// console.log(newArrForLoop);
+
+// const filteredArr = dogsNamesArr.filter((dog) => dog[0] === "B");
+// console.log(filteredArr);
+
+// const filtDog = [];
+// for (let i = 0; i < dogsNamesArr.length; i++) {
+// if (dogsNamesArr[i][0] === "B") {
+// filtDog.push(dogsNamesArr[i]);
+// }
+// }
+// console.log(filtDog);
+
+// const numArr = [1, 2, 3, 4];
+
+// 1 + 2;
+// 3 + 3;
+// 6 + 4;
+
+const sum = numArr.reduce((acc, current) => acc + current, 3);
+console.log(sum);
+
+const sumWithNewStartingValue = numArr.reduce(
+  (acc, current) => acc + current,
+  3
 );
+console.log(sumWithNewStartingValue);
 
-// Split the string of numbers into an array of strings.
-const stringArray = userInputString.split(",");
-
-// Convert the array of strings into an array of numbers.
-const numbers = [];
-for (let i = 0; i < stringArray.length; i++) {
-  const str = stringArray[i];
-  const number = parseInt(str);
-  numbers.push(number);
-}
-
-// Perform some calculations on the numbers.
-console.log(numbers);
-console.log(`You have given ${getLength(numbers)} numbers.`);
-console.log(`The sum of your numbers is ${getSum(numbers)}.`);
-console.log(`The mean of your numbers is ${getMean(numbers)}.`);
-console.log(`The smallest of your numbers is ${getMin(numbers)}.`);
-console.log(`The largest of your numbers is ${getMax(numbers)}.`);
-console.log(`The range of your numbers is ${getRange(numbers)}.`);
-console.log(`The even numbers you gave are ${getEvens(numbers)}.`);
-console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
-
-// === EDIT THE CODE BELOW ===
-// Complete the functions below to make the program work!
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the length of the array
- */
-function getLength(numbers) {
-  return numbers.length;
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the sum of the numbers
- */
-function getSum(numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  return sum;
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the mean of the numbers
- */
-function getMean(numbers) {
-  return getSum(numbers) / getLength(numbers);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the smallest of the numbers
- */
-function getMin(numbers) {
-  return Math.min(...numbers);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the largest of the numbers
- */
-function getMax(numbers) {
-  return Math.max(...numbers);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the range of the numbers (max - min)
- */
-function getRange(numbers) {
-  return getMax(numbers) - getMin(numbers);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number[]} the even numbers in the array
- */
-function getEvens(numbers) {
-  return numbers.filter(number => number % 2 === 0);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number[]} the odd numbers in the array
- */
-function getOdds(numbers) {
-  return numbers.filter(number => number % 2 !== 0);
-}
+// let total = 0;
+// for (let i = 0; i < numArr.length; i++) {
+//   console.log(`The total is ${total}`);
+//   total += numArr[i];
+// }
+// console.log(total);
