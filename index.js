@@ -1,101 +1,47 @@
-// === DO NOT EDIT THIS REGION ===
-// Read the comments to understand how the program is structured.
+const names = ["Alice", "Bob", "Carol", "Dave", "Eve", "Corey", "Tom", "Even", "Homelander"];
+const occupations = ["Writer", "Teacher", "Programmer", "Designer", "Artist", "Superhero", "Game Design"];
 
-// Prompt the user for a list of integers separated by commas.
-const userInputString = prompt(
-  "Please enter some integers separated by commas.",
-  "1,2,3,4,5"
-);
+const freelancers = [
+  { name: "Alice", occupation: "Writer", price: 30 },
+  { name: "Bob", occupation: "Teacher", price: 50 },
+];
 
-// Split the string of numbers into an array of strings.
-const stringArray = userInputString.split(",");
-
-// Convert the array of strings into an array of numbers.
-const numbers = [];
-for (let i = 0; i < stringArray.length; i++) {
-  const str = stringArray[i];
-  const number = parseInt(str);
-  numbers.push(number);
+function calculateAveragePrice() {
+  const total = freelancers.reduce(
+    (sum, freelancer) => sum + freelancer.price,
+    0
+  );
+  return (total / freelancers.length).toFixed(2);
 }
 
-// Perform some calculations on the numbers.
-console.log(numbers);
-console.log(`You have given ${getLength(numbers)} numbers.`);
-console.log(`The sum of your numbers is ${getSum(numbers)}.`);
-console.log(`The mean of your numbers is ${getMean(numbers)}.`);
-console.log(`The smallest of your numbers is ${getMin(numbers)}.`);
-console.log(`The largest of your numbers is ${getMax(numbers)}.`);
-console.log(`The range of your numbers is ${getRange(numbers)}.`);
-console.log(`The even numbers you gave are ${getEvens(numbers)}.`);
-console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
+function renderFreelancers() {
+  const freelancerList = document.getElementById("freelancerList");
+  freelancerList.innerHTML = ""; 
 
-// === EDIT THE CODE BELOW ===
-// Complete the functions below to make the program work!
+  freelancers.forEach((freelancer) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${freelancer.name}</td><td>${freelancer.occupation}</td><td>$${freelancer.price}</td>`;
+    freelancerList.appendChild(row);
+  });
 
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the length of the array
- */
-function getLength(numbers) {
-  return numbers.length;
+  const averagePrice = calculateAveragePrice();
+  document.getElementById(
+    "averagePrice"
+  ).textContent = `Average Starting Price: $${averagePrice}`;
 }
 
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the sum of the numbers
- */
-function getSum(numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  return sum;
+function getRandomFreelancer() {
+  const name = names[Math.floor(Math.random() * names.length)];
+  const occupation =
+    occupations[Math.floor(Math.random() * occupations.length)];
+  const price = Math.floor(Math.random() * 100) + 20;
+
+  return { name, occupation, price };
 }
 
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the mean of the numbers
- */
-function getMean(numbers) {
-  return getSum(numbers) / getLength(numbers);
-}
+setInterval(() => {
+  const newFreelancer = getRandomFreelancer();
+  freelancers.push(newFreelancer);
+  renderFreelancers();
+}, 5000); 
 
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the smallest of the numbers
- */
-function getMin(numbers) {
-  return Math.min(...numbers);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the largest of the numbers
- */
-function getMax(numbers) {
-  return Math.max(...numbers);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number} the range of the numbers (max - min)
- */
-function getRange(numbers) {
-  return getMax(numbers) - getMin(numbers);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number[]} the even numbers in the array
- */
-function getEvens(numbers) {
-  return numbers.filter(number => number % 2 === 0);
-}
-
-/**
- * @param {number[]} numbers an array of integers
- * @returns {number[]} the odd numbers in the array
- */
-function getOdds(numbers) {
-  return numbers.filter(number => number % 2 !== 0);
-}
